@@ -1,20 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { MobileWalletProvider } from "@wallet-ui/react-native-web3js";
+import { RPC_URL } from "./src/constants";
+import HomeScreen from "./src/HomeScreen";
+
+const identity = {
+  name: "MWA Swap",
+  uri: "https://example.com",
+  icon: "favicon.png", // relative to uri
+};
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <MobileWalletProvider
+      chain="solana:mainnet"
+      endpoint={RPC_URL}
+      identity={identity}
+    >
+      <HomeScreen />
+      <StatusBar style="dark" />
+    </MobileWalletProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
