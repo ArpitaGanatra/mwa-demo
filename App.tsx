@@ -5,7 +5,7 @@ import HomeScreen from "./src/HomeScreen";
 
 const identity = {
   name: "MWA Swap",
-  uri: "https://example.com",
+  uri: "https://app.izuki.com",
   icon: "favicon.png", // relative to uri
 };
 
